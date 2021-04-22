@@ -1,20 +1,19 @@
-import React, {useRef} from 'react';
-import {View, Image, Dimensions, Animated, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, Image, Dimensions, StyleSheet} from 'react-native';
 import Carousel from './carousel/carousel';
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 const data = [
   {
-    imgUrl:
-      'https://thumbs.dreamstime.com/b/female-muslim-archer-character-illustration-female-muslim-archer-character-194540833.jpg',
+    imgUrl: 'https://pbs.twimg.com/media/DsTXxaAWoAAMU0g.jpg',
   },
   {
     imgUrl:
-      'https://i.pinimg.com/originals/61/fc/d5/61fcd52ba7ed00ac7ee8e01c700c727d.png',
+      'https://cdnb.artstation.com/p/assets/images/images/013/548/051/large/scykiazor-p-high-elf-gbsl.jpg?1540123593',
   },
   {
     imgUrl:
-      'https://thumbs.dreamstime.com/b/female-muslim-archer-character-illustration-female-muslim-archer-character-194540833.jpg',
+      'https://animesher.com/orig/0/61/612/6129/animesher.com_girl-anime-girl-archer-612968.jpg',
   },
 ];
 
@@ -35,6 +34,7 @@ const App = () => {
         renderItem={CarouselCardItem}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
+        enableSnap={true}
       />
     </View>
   );
@@ -42,23 +42,27 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    marginTop: 0,
 
     borderRadius: 10,
 
-    paddingBottom: 40,
+    paddingBottom: 0,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-    elevation: 20,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 3,
+    // },
+    // shadowOpacity: 0.29,
+    // shadowRadius: 4.65,
+    // elevation: 20,
   },
   image: {
     width: ITEM_WIDTH,
     height: '90%',
+    borderRadius: 20,
   },
 });
 
